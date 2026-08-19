@@ -355,6 +355,91 @@
 }
 .legend-copy p+p{margin-top:27px}
 
+/* PAGE 05 — SACRED GLIMPSES */
+.glimpses-section{
+  position:relative;
+  min-height:86vh;
+  background:var(--figma-bg);
+  color:var(--figma-ink);
+  padding:clamp(118px,13vh,155px) clamp(36px,5.5vw,105px) clamp(118px,13vh,150px);
+  border-bottom:1px solid rgba(200,154,65,.18);
+  overflow:hidden;
+}
+
+.glimpses-kicker{
+  width:max-content;
+  max-width:100%;
+  margin:0 auto 28px;
+  padding:8px 18px 7px;
+  border:1px solid rgba(211,165,75,.88);
+  border-radius:999px;
+  color:#d4a84d;
+  font-size:11px;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.21em;
+  text-transform:uppercase;
+}
+
+.glimpses-section h2{
+  margin:0;
+  text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(50px,4.1vw,72px);
+  font-weight:400;
+  line-height:1;
+  letter-spacing:-.035em;
+  color:#f2eadc;
+}
+
+.glimpses-grid{
+  width:min(100%,1640px);
+  margin:clamp(70px,8vh,92px) auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(24px,2.1vw,34px);
+}
+
+.glimpse-card{
+  border:1px solid rgba(184,143,76,.35);
+  border-radius:14px;
+  padding:12px 12px 16px;
+  background:rgba(21,18,15,.34);
+  overflow:hidden;
+  transition:border-color .35s ease,transform .35s ease,box-shadow .35s ease;
+}
+
+.glimpse-card:nth-child(2){
+  border-color:rgba(209,163,70,.88);
+}
+
+.glimpse-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(209,163,70,.8);
+  box-shadow:0 18px 38px rgba(0,0,0,.18);
+}
+
+.glimpse-card img{
+  width:100%;
+  aspect-ratio:1.52/1;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border-radius:9px;
+  background:#0e0c0a;
+  filter:saturate(.9) contrast(1.02) brightness(.92);
+}
+
+.glimpse-card h3{
+  margin:17px 1px 0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(23px,1.75vw,30px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.02em;
+  color:#eee5d6;
+}
+
 @media(max-width:1200px){
   .divine-section{padding-left:55px;padding-right:55px}
   .divine-grid{grid-template-columns:minmax(360px,.88fr) minmax(440px,1.12fr);gap:58px}
@@ -366,6 +451,8 @@
 
   .legend-section{padding-left:55px;padding-right:55px}
   .legend-grid{gap:72px;grid-template-columns:minmax(340px,.8fr) minmax(440px,1.2fr)}
+
+  .glimpses-section{padding-left:48px;padding-right:48px}
 }
 
 @media(max-width:900px){
@@ -387,6 +474,9 @@
   .legend-kicker{margin-bottom:58px}
   .legend-grid{grid-template-columns:1fr;gap:52px}
   .legend-heading,.legend-copy{width:min(100%,720px);margin:0 auto}
+
+  .glimpses-section{min-height:auto;padding:96px 24px 100px}
+  .glimpses-grid{grid-template-columns:1fr;gap:24px;margin-top:58px;width:min(100%,680px)}
 }
 
 @media(max-width:600px){
@@ -413,4 +503,12 @@
   .legend-heading h2{font-size:clamp(46px,13vw,60px)}
   .legend-quote{font-size:15px}
   .legend-copy p{font-size:15px;line-height:1.68}
+
+  .glimpses-section{padding:84px 14px 88px}
+  .glimpses-kicker{font-size:9px;letter-spacing:.17em;padding:7px 14px;margin-bottom:20px}
+  .glimpses-section h2{font-size:clamp(44px,12vw,58px)}
+  .glimpses-grid{margin-top:48px}
+  .glimpse-card{border-radius:12px;padding:10px 10px 14px}
+  .glimpse-card img{border-radius:8px}
+  .glimpse-card h3{font-size:24px;margin-top:14px}
 }
