@@ -174,12 +174,102 @@
   transform:none;
 }
 
+/* PAGE 03 — THE SACRED ABODE */
+.sacred-abode{
+  position:relative;
+  min-height:100vh;
+  background:var(--figma-bg);
+  padding:clamp(92px,10vh,118px) clamp(26px,3.1vw,52px) clamp(74px,8vh,94px);
+  overflow:hidden;
+}
+
+.abode-image{
+  position:relative;
+  width:100%;
+  min-height:calc(100vh - 190px);
+  overflow:hidden;
+  background:#0d0c0a;
+}
+
+.abode-image img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 51%;
+  display:block;
+  filter:saturate(.72) brightness(.78) contrast(1.03);
+  transform:scale(1.002);
+}
+
+.abode-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(180deg,rgba(12,10,8,.10) 0%,rgba(12,10,8,.18) 35%,rgba(10,8,6,.46) 68%,rgba(9,7,6,.63) 100%),
+    linear-gradient(90deg,rgba(8,7,6,.06),transparent 22%,transparent 78%,rgba(8,7,6,.06));
+  pointer-events:none;
+}
+
+.abode-copy{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:clamp(82px,10vh,116px);
+  width:min(900px,88%);
+  transform:translateX(-50%);
+  text-align:center;
+  color:var(--figma-ink);
+}
+
+.abode-kicker{
+  width:max-content;
+  max-width:100%;
+  margin:0 auto 27px;
+  padding:8px 19px 7px;
+  border:1px solid rgba(211,165,75,.88);
+  border-radius:999px;
+  color:#d6ab56;
+  font-size:11px;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  background:rgba(27,22,17,.16);
+}
+
+.abode-copy h2{
+  margin:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,4.5vw,77px);
+  font-weight:400;
+  line-height:.98;
+  letter-spacing:-.035em;
+  color:#f3ebde;
+  text-shadow:0 6px 32px rgba(0,0,0,.36);
+}
+
+.abode-copy p{
+  max-width:760px;
+  margin:25px auto 0;
+  color:#b4aea5;
+  font-size:clamp(15px,1.1vw,18px);
+  line-height:1.33;
+  font-weight:300;
+  text-shadow:0 3px 20px rgba(0,0,0,.42);
+}
+
 @media(max-width:1200px){
   .divine-section{padding-left:55px;padding-right:55px}
   .divine-grid{grid-template-columns:minmax(360px,.88fr) minmax(440px,1.12fr);gap:58px}
   .divine-portrait{min-height:560px;height:67vh}
   .prabhavali-card{grid-template-columns:185px 1fr}
   .prabhavali-card img{width:185px}
+
+  .sacred-abode{padding-left:34px;padding-right:34px}
 }
 
 @media(max-width:900px){
@@ -190,6 +280,12 @@
   .divine-copy{width:min(100%,680px);margin:0 auto;padding:0}
   .divine-rank{margin:30px 0 24px}
   .divine-ornament{margin-bottom:29px}
+
+  .sacred-abode{padding:82px 20px 58px}
+  .abode-image{min-height:72vh}
+  .abode-copy{bottom:58px;width:min(92%,720px)}
+  .abode-kicker{margin-bottom:20px}
+  .abode-copy p{margin-top:18px;line-height:1.5}
 }
 
 @media(max-width:600px){
@@ -202,4 +298,12 @@
   .prabhavali-card img{width:120px;border-radius:7px}
   .prabhavali-copy h3{font-size:21px}
   .prabhavali-copy p{font-size:12px}
+
+  .sacred-abode{padding:72px 12px 45px}
+  .abode-image{min-height:68vh}
+  .abode-image img{object-position:center center}
+  .abode-copy{bottom:42px;width:92%}
+  .abode-kicker{font-size:9px;letter-spacing:.17em;padding:7px 14px;margin-bottom:16px}
+  .abode-copy h2{font-size:clamp(42px,12vw,56px)}
+  .abode-copy p{font-size:13px;line-height:1.45;margin-top:15px}
 }
