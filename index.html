@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="refinements.css" />
+  <link rel="stylesheet" href="figma-pages.css" />
 </head>
 <body class="hero-locked">
   <div class="noise" aria-hidden="true"></div>
@@ -32,9 +33,7 @@
   <main>
     <section class="reveal-scroll" id="revelation" aria-label="Sacred revelation animation">
       <div class="reveal-stage">
-        <!-- The supplied concept image is the full inner hero. -->
         <div class="image-layer" aria-hidden="true"></div>
-        <!-- Hides the non-interactive nav baked into the concept image. -->
         <div class="inner-nav-mask" aria-hidden="true"></div>
         <div class="shade" aria-hidden="true"></div>
         <div class="sacred-glow" aria-hidden="true"></div>
@@ -45,7 +44,6 @@
           <span class="live-node node-two"></span>
         </div>
 
-        <!-- Same outer-rock direction as V5: one seamless surface that fractures. -->
         <div class="stone-shell" aria-hidden="true"></div>
         <div class="rock-fragments" aria-hidden="true">
           <div class="rock-piece rock-a"></div>
@@ -76,19 +74,27 @@
       </div>
     </section>
 
-    <section class="story section" id="story">
-      <div class="section-number">01</div>
-      <div class="story-grid">
-        <div class="story-copy reveal-on-scroll">
-          <p class="eyebrow gold">THE SACRED REVELATION</p>
-          <h2>Hidden beneath the earth.</h2>
-          <p>According to the tradition shared by Balsana Vimalnath Tirth, a stone protruding from the ground repeatedly drew attention. When the place was cleared, the Pratimaji of Shri Vimalnath Dada was revealed from beneath the earth.</p>
-          <p class="quote">A quiet discovery that transformed a small village into a place of pilgrimage.</p>
-        </div>
-        <div class="artifact-card reveal-on-scroll">
-          <div class="artifact-orbit"></div>
-          <div class="artifact-img"></div>
-          <div class="artifact-label"><span>Shri Vimalnath Dada</span><small>Concept visual for demo</small></div>
+    <section class="divine-section" id="story" aria-label="Shri Vimalnath Bhagwan">
+      <div class="divine-kicker reveal-on-scroll">• The Divine Figure</div>
+
+      <div class="divine-grid">
+        <figure class="divine-portrait reveal-on-scroll">
+          <img src="assets/OIP2.jpg" alt="Shri Vimalnath Bhagwan" />
+        </figure>
+
+        <div class="divine-copy reveal-on-scroll">
+          <h2>Shri Vimalnath Bhagwan</h2>
+          <div class="divine-rank">13th Tirthankara</div>
+          <div class="divine-ornament" aria-hidden="true"><span></span></div>
+          <p>Carved with absolute precision from sacred stone, the deep black posture of Vimalnath Bhagwan radiates a deep meditative stillness. Adorned with a magnificent golden crown and frame (Prabhavali), the Murti stands as a physical conduit of ancient spiritual liberation.</p>
+
+          <div class="prabhavali-card">
+            <img src="assets/OIP3.jpg" alt="Golden Prabhavali around Shri Vimalnath Bhagwan" />
+            <div class="prabhavali-copy">
+              <h3>The Golden Prabhavali</h3>
+              <p>Intricate celestial carvings framing the Lord in infinite grace and light.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
