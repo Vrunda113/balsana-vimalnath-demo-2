@@ -31,7 +31,8 @@
 body.hero-complete .inner-nav-mask{opacity:.44;}
 
 /* Live golden light paths inspired by the first prototype.
-   They stay completely hidden during the stone reveal and wake up only after the reveal lands. */
+   They stay hidden during the reveal, then radiate OUTWARD from the murti.
+   Both paths start below the face/chin area so they never cross the face. */
 .living-lines{
   position:absolute;
   inset:0;
@@ -48,18 +49,31 @@ body.hero-complete .living-lines{opacity:.92;}
   position:absolute;
   height:1px;
   transform-origin:left center;
-  background:linear-gradient(90deg,transparent 0%,rgba(190,139,62,.14) 12%,rgba(230,185,91,.72) 53%,rgba(255,223,153,.9) 72%,rgba(190,139,62,.10) 95%,transparent 100%);
+  background:linear-gradient(90deg,rgba(255,221,146,.82) 0%,rgba(230,185,91,.62) 20%,rgba(190,139,62,.26) 62%,rgba(190,139,62,.05) 90%,transparent 100%);
   box-shadow:0 0 7px rgba(226,170,76,.28),0 0 24px rgba(204,139,48,.12);
-  opacity:.74;
+  opacity:.72;
 }
-.live-left{left:-10vw;top:57%;width:73vw;transform:rotate(-12deg);}
-.live-right{left:56%;top:51%;width:57vw;transform:rotate(16deg);opacity:.58;}
 
-/* A tiny directional point keeps the line reading like a light arrow rather than a static divider. */
+/* Both rays originate around the murti's chest/heart area and move away from it. */
+.live-left{
+  left:54.4%;
+  top:58.8%;
+  width:58vw;
+  transform:rotate(168deg);
+}
+.live-right{
+  left:54.4%;
+  top:58.8%;
+  width:52vw;
+  transform:rotate(12deg);
+  opacity:.58;
+}
+
+/* Arrow tip is always on the OUTER end of each ray. */
 .living-line::before{
   content:"";
   position:absolute;
-  right:4%;
+  right:2.5%;
   top:50%;
   width:7px;
   height:7px;
@@ -69,52 +83,53 @@ body.hero-complete .living-lines{opacity:.92;}
   filter:drop-shadow(0 0 6px rgba(239,190,95,.55));
 }
 
-/* Moving glint: subtle enough for a temple site, but it makes the completed hero feel alive. */
+/* The moving glint begins at the murti and only travels outward. */
 .living-line::after{
   content:"";
   position:absolute;
   top:-2px;
   left:0;
-  width:16%;
+  width:15%;
   height:5px;
   border-radius:999px;
-  background:linear-gradient(90deg,transparent,rgba(255,235,184,.16),rgba(255,222,142,.94),transparent);
+  background:linear-gradient(90deg,rgba(255,236,190,.9),rgba(255,222,142,.95),rgba(255,235,184,.24),transparent);
   filter:blur(.35px) drop-shadow(0 0 9px rgba(239,184,88,.65));
   opacity:0;
-  transform:translateX(-120%);
+  transform:translateX(-35%);
   animation:lightTravel 5.8s cubic-bezier(.22,.61,.36,1) infinite;
   animation-play-state:paused;
 }
-.live-right::after{animation-delay:1.55s;animation-duration:6.4s;}
+.live-right::after{animation-delay:1.45s;animation-duration:6.4s;}
 body.hero-complete .living-line::after{animation-play-state:running;}
 
+/* Single pulse at the light source: the murti remains the visual origin. */
 .live-node{
   position:absolute;
-  width:5px;
-  height:5px;
+  width:6px;
+  height:6px;
   border-radius:50%;
-  background:#e9bc66;
-  box-shadow:0 0 8px rgba(239,189,95,.9),0 0 24px rgba(211,145,48,.5);
-  opacity:.45;
+  background:#f0c873;
+  box-shadow:0 0 9px rgba(247,202,113,.95),0 0 26px rgba(211,145,48,.52);
+  opacity:.5;
   animation:nodePulse 3.8s ease-in-out infinite;
   animation-play-state:paused;
 }
-.node-one{left:53.5%;top:50.5%;}
-.node-two{left:22%;top:50%;animation-delay:1.1s;}
+.node-one{left:54.25%;top:58.45%;}
+.node-two{display:none;}
 body.hero-complete .live-node{animation-play-state:running;}
 
 /* The existing sacred glow now breathes very slightly after the reveal instead of freezing. */
 body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite;}
 
 @keyframes lightTravel{
-  0%,12%{transform:translateX(-120%);opacity:0;}
-  22%{opacity:.75;}
-  68%{opacity:.9;}
-  84%,100%{transform:translateX(640%);opacity:0;}
+  0%,12%{transform:translateX(-35%);opacity:0;}
+  20%{opacity:.82;}
+  68%{opacity:.92;}
+  88%,100%{transform:translateX(630%);opacity:0;}
 }
 @keyframes nodePulse{
-  0%,100%{opacity:.28;box-shadow:0 0 7px rgba(239,189,95,.58),0 0 18px rgba(211,145,48,.26);}
-  50%{opacity:.9;box-shadow:0 0 11px rgba(255,218,137,.9),0 0 34px rgba(211,145,48,.58);}
+  0%,100%{opacity:.3;box-shadow:0 0 7px rgba(239,189,95,.58),0 0 18px rgba(211,145,48,.26);}
+  50%{opacity:.95;box-shadow:0 0 12px rgba(255,218,137,.94),0 0 36px rgba(211,145,48,.62);}
 }
 @keyframes sacredBreath{
   0%,100%{opacity:.82;filter:blur(18px);}
@@ -123,9 +138,10 @@ body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite
 
 @media(max-width:900px){
   .image-layer{background-position:center 42%;}
-  .living-line{opacity:.46;}
-  .live-left{left:-24vw;width:92vw;}
-  .live-right{left:54%;width:72vw;}
+  .living-line{opacity:.44;}
+  .live-left{left:55%;top:60%;width:72vw;transform:rotate(169deg);}
+  .live-right{left:55%;top:60%;width:68vw;transform:rotate(11deg);}
+  .node-one{left:54.8%;top:59.7%;}
 }
 
 @media(prefers-reduced-motion:reduce){
