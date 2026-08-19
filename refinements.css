@@ -18,8 +18,9 @@
 }
 
 /* Crop the navigation baked into the concept artwork a little more aggressively,
-   then use only a soft veil below the real navigation rather than an opaque cover. */
-.image-layer{background-position:center 56%;}
+   then use only a soft veil below the real navigation rather than an opaque cover.
+   The artwork itself is shifted down so the full murti remains visible below the real navbar. */
+.image-layer{background-position:center 34%;}
 .inner-nav-mask{
   height:92px;
   background:linear-gradient(180deg,rgba(8,7,6,.34) 0%,rgba(8,7,6,.13) 54%,rgba(8,7,6,0) 100%);
@@ -121,7 +122,7 @@ body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite
 }
 
 @media(max-width:900px){
-  .image-layer{background-position:center 55%;}
+  .image-layer{background-position:center 42%;}
   .living-line{opacity:.46;}
   .live-left{left:-24vw;width:92vw;}
   .live-right{left:54%;width:72vw;}
