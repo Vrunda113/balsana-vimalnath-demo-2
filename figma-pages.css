@@ -166,7 +166,6 @@
   line-height:1.42;
 }
 
-/* Small entrance motion only; it follows the current site's reveal language. */
 .divine-section .reveal-on-scroll{
   transform:translateY(28px);
 }
@@ -262,6 +261,100 @@
   text-shadow:0 3px 20px rgba(0,0,0,.42);
 }
 
+/* PAGE 04 — LEGENDS IN STONE */
+.legend-section{
+  position:relative;
+  min-height:86vh;
+  background:#0f0e0c;
+  color:var(--figma-ink);
+  padding:clamp(105px,12vh,150px) clamp(38px,7.1vw,140px) clamp(110px,13vh,155px);
+  overflow:hidden;
+}
+
+.legend-kicker{
+  width:max-content;
+  max-width:100%;
+  margin:0 auto clamp(72px,9vh,98px);
+  padding:8px 18px 7px;
+  border:1px solid rgba(211,165,75,.88);
+  border-radius:999px;
+  color:#d4a84d;
+  font-size:11px;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.21em;
+  text-transform:uppercase;
+}
+
+.legend-grid{
+  width:min(100%,1640px);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(420px,.86fr) minmax(540px,1.14fr);
+  gap:clamp(90px,8vw,150px);
+  align-items:start;
+}
+
+.legend-heading h2{
+  margin:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(54px,4.25vw,78px);
+  font-weight:400;
+  line-height:.98;
+  letter-spacing:-.04em;
+  color:#f2eadc;
+}
+
+.legend-ornament{
+  width:137px;
+  height:10px;
+  position:relative;
+  margin:29px 0 24px;
+}
+.legend-ornament::before,
+.legend-ornament::after{
+  content:"";
+  position:absolute;
+  top:4px;
+  width:53px;
+  height:1px;
+  background:rgba(194,146,55,.62);
+}
+.legend-ornament::before{left:0}
+.legend-ornament::after{right:0}
+.legend-ornament span{
+  position:absolute;
+  left:50%;
+  top:1px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#d0a24d;
+  transform:translateX(-50%);
+}
+
+.legend-quote{
+  max-width:560px;
+  margin:0;
+  color:#d4ad55;
+  font-size:clamp(16px,1.15vw,19px);
+  line-height:1.48;
+  font-weight:300;
+}
+
+.legend-copy{
+  padding-top:2px;
+  max-width:760px;
+}
+.legend-copy p{
+  margin:0;
+  color:#9c9690;
+  font-size:clamp(16px,1.1vw,19px);
+  line-height:1.72;
+  font-weight:300;
+}
+.legend-copy p+p{margin-top:27px}
+
 @media(max-width:1200px){
   .divine-section{padding-left:55px;padding-right:55px}
   .divine-grid{grid-template-columns:minmax(360px,.88fr) minmax(440px,1.12fr);gap:58px}
@@ -270,6 +363,9 @@
   .prabhavali-card img{width:185px}
 
   .sacred-abode{padding-left:34px;padding-right:34px}
+
+  .legend-section{padding-left:55px;padding-right:55px}
+  .legend-grid{gap:72px;grid-template-columns:minmax(340px,.8fr) minmax(440px,1.2fr)}
 }
 
 @media(max-width:900px){
@@ -286,6 +382,11 @@
   .abode-copy{bottom:58px;width:min(92%,720px)}
   .abode-kicker{margin-bottom:20px}
   .abode-copy p{margin-top:18px;line-height:1.5}
+
+  .legend-section{min-height:auto;padding:96px 26px 100px}
+  .legend-kicker{margin-bottom:58px}
+  .legend-grid{grid-template-columns:1fr;gap:52px}
+  .legend-heading,.legend-copy{width:min(100%,720px);margin:0 auto}
 }
 
 @media(max-width:600px){
@@ -306,4 +407,10 @@
   .abode-kicker{font-size:9px;letter-spacing:.17em;padding:7px 14px;margin-bottom:16px}
   .abode-copy h2{font-size:clamp(42px,12vw,56px)}
   .abode-copy p{font-size:13px;line-height:1.45;margin-top:15px}
+
+  .legend-section{padding:82px 20px 88px}
+  .legend-kicker{font-size:9px;letter-spacing:.17em;padding:7px 14px;margin-bottom:48px}
+  .legend-heading h2{font-size:clamp(46px,13vw,60px)}
+  .legend-quote{font-size:15px}
+  .legend-copy p{font-size:15px;line-height:1.68}
 }
