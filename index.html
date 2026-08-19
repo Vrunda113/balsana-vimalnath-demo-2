@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#15110d" />
+  <title>Balsana Vimalnath Tirth — Cinematic Demo V6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="hero-locked">
+  <div class="noise" aria-hidden="true"></div>
+  <canvas id="dust" aria-hidden="true"></canvas>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#revelation" aria-label="Balsana Tirth home">
+      <span class="brand-logo-wrap"><img src="assets/logo.jpeg" class="brand-logo" alt="Balsana Tirth logo" /></span>
+      <span class="brand-copy"><b>Balsana Tirth</b><small>Shri Vimalnathji</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#revelation">The Revelation</a>
+      <a href="#story">The Murti</a>
+      <a href="#tirth">The Tirth</a>
+      <a href="#legacy">History</a>
+    </nav>
+    <a class="nav-cta" href="#visit">Plan Visit</a>
+  </header>
+
+  <main>
+    <section class="reveal-scroll" id="revelation" aria-label="Sacred revelation animation">
+      <div class="reveal-stage">
+        <!-- The supplied concept image is the full inner hero. -->
+        <div class="image-layer" aria-hidden="true"></div>
+        <!-- Hides the non-interactive nav baked into the concept image. -->
+        <div class="inner-nav-mask" aria-hidden="true"></div>
+        <div class="shade" aria-hidden="true"></div>
+        <div class="sacred-glow" aria-hidden="true"></div>
+
+        <!-- Same outer-rock direction as V5: one seamless surface that fractures. -->
+        <div class="stone-shell" aria-hidden="true"></div>
+        <div class="rock-fragments" aria-hidden="true">
+          <div class="rock-piece rock-a"></div>
+          <div class="rock-piece rock-b"></div>
+          <div class="rock-piece rock-c"></div>
+          <div class="rock-piece rock-d"></div>
+          <div class="rock-piece rock-e"></div>
+          <div class="rock-piece rock-f"></div>
+          <div class="rock-piece rock-g"></div>
+        </div>
+
+        <div class="crack crack-a" aria-hidden="true"></div>
+        <div class="crack crack-b" aria-hidden="true"></div>
+        <div class="crack crack-c" aria-hidden="true"></div>
+        <div class="crack crack-d" aria-hidden="true"></div>
+
+        <div class="outer-intro" aria-hidden="true">
+          <p class="eyebrow">THE SACRED REVELATION</p>
+          <h1>Balsana Vimalnath Tirth</h1>
+          <span>Scroll slowly to reveal</span>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span id="scrollLabel">Scroll to reveal</span>
+          <i></i>
+        </div>
+        <div class="progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <section class="story section" id="story">
+      <div class="section-number">01</div>
+      <div class="story-grid">
+        <div class="story-copy reveal-on-scroll">
+          <p class="eyebrow gold">THE SACRED REVELATION</p>
+          <h2>Hidden beneath the earth.</h2>
+          <p>According to the tradition shared by Balsana Vimalnath Tirth, a stone protruding from the ground repeatedly drew attention. When the place was cleared, the Pratimaji of Shri Vimalnath Dada was revealed from beneath the earth.</p>
+          <p class="quote">A quiet discovery that transformed a small village into a place of pilgrimage.</p>
+        </div>
+        <div class="artifact-card reveal-on-scroll">
+          <div class="artifact-orbit"></div>
+          <div class="artifact-img"></div>
+          <div class="artifact-label"><span>Shri Vimalnath Dada</span><small>Concept visual for demo</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legacy section" id="legacy">
+      <div class="section-number">02</div>
+      <div class="legacy-head reveal-on-scroll">
+        <p class="eyebrow gold">FROM REVELATION TO FAITH</p>
+        <h2>From a revelation<br/>rose a Tirth.</h2>
+      </div>
+      <div class="legacy-line" aria-hidden="true"></div>
+      <div class="legacy-cards">
+        <article class="legacy-card reveal-on-scroll"><span>01</span><h3>The Stone</h3><p>A mysterious stone emerges from the quiet ground of Balsana.</p></article>
+        <article class="legacy-card reveal-on-scroll"><span>02</span><h3>The Revelation</h3><p>The sacred Pratimaji is revealed, becoming the heart of the story.</p></article>
+        <article class="legacy-card reveal-on-scroll"><span>03</span><h3>The Tirth</h3><p>The revelation becomes a living place of devotion and pilgrimage.</p></article>
+      </div>
+    </section>
+
+    <section class="tirth section" id="tirth">
+      <div class="tirth-arch arch-left" aria-hidden="true"></div>
+      <div class="tirth-arch arch-right" aria-hidden="true"></div>
+      <div class="tirth-copy reveal-on-scroll">
+        <p class="eyebrow">BALSANA · MAHARASHTRA</p>
+        <h2>A place shaped by faith.</h2>
+        <p>Designed as a calm digital pilgrimage, the final experience can combine the real temple, darshan, history, booking and travel information around one cinematic story.</p>
+        <a class="button" href="#visit">Discover the Tirth <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="visit section" id="visit">
+      <div class="visit-head reveal-on-scroll"><p class="eyebrow gold">WELCOME TO BALSANA</p><h2>Begin your journey.</h2></div>
+      <div class="visit-grid">
+        <a class="visit-card reveal-on-scroll" href="#"><span class="icon">◌</span><div><b>Darshan</b><small>Temple & live darshan</small></div><i>↗</i></a>
+        <a class="visit-card reveal-on-scroll" href="#"><span class="icon">⌂</span><div><b>Stay</b><small>Booking & facilities</small></div><i>↗</i></a>
+        <a class="visit-card reveal-on-scroll" href="#"><span class="icon">◇</span><div><b>Travel</b><small>Route & location</small></div><i>↗</i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><img src="assets/logo.jpeg" alt="Balsana Tirth logo"/><span><b>Balsana Vimalnath Tirth</b><small>Cinematic homepage concept</small></span></div>
+    <p>Demo concept. Use client-approved official imagery and final verified content for production.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
