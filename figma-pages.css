@@ -1,0 +1,205 @@
+/* Figma-inspired inner sections. The cinematic hero remains untouched. */
+
+:root{
+  --figma-bg:#191613;
+  --figma-ink:#efe8da;
+  --figma-muted:#9c958d;
+  --figma-gold:#c99a3b;
+  --figma-gold-soft:rgba(201,154,59,.55);
+}
+
+/* PAGE 02 — THE DIVINE FIGURE */
+.divine-section{
+  position:relative;
+  min-height:100vh;
+  background:var(--figma-bg);
+  color:var(--figma-ink);
+  padding:clamp(118px,11vh,150px) clamp(32px,6.9vw,132px) clamp(74px,9vh,105px);
+  overflow:hidden;
+}
+
+.divine-kicker{
+  width:max-content;
+  margin:0 auto clamp(54px,7vh,82px);
+  padding:8px 20px 7px;
+  border:1px solid rgba(211,165,75,.85);
+  border-radius:999px;
+  color:#d3aa5a;
+  font-size:11px;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.divine-grid{
+  width:min(100%,1640px);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(420px, .88fr) minmax(500px, 1.12fr);
+  gap:clamp(70px,6vw,118px);
+  align-items:center;
+}
+
+.divine-portrait{
+  position:relative;
+  height:min(70vh,760px);
+  min-height:600px;
+  border:1px solid rgba(205,155,55,.9);
+  border-radius:14px;
+  overflow:hidden;
+  background:#0d0c0a;
+  box-shadow:0 26px 70px rgba(0,0,0,.24);
+}
+
+.divine-portrait img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 48%;
+  filter:saturate(.92) contrast(1.04) brightness(.93);
+  transform:scale(1.01);
+}
+
+.divine-portrait::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 58%,rgba(7,6,5,.12) 76%,rgba(7,6,5,.67) 100%);
+}
+
+.divine-copy{
+  max-width:760px;
+  padding-top:8px;
+}
+
+.divine-copy h2{
+  margin:0;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  font-size:clamp(52px,4.1vw,78px);
+  line-height:.98;
+  letter-spacing:-.035em;
+  color:#f2ebdf;
+}
+
+.divine-rank{
+  margin:42px 0 31px;
+  color:#cda249;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+}
+
+.divine-ornament{
+  width:138px;
+  height:10px;
+  margin-bottom:39px;
+  position:relative;
+}
+.divine-ornament::before,
+.divine-ornament::after{
+  content:"";
+  position:absolute;
+  top:4px;
+  width:53px;
+  height:1px;
+  background:rgba(194,146,55,.62);
+}
+.divine-ornament::before{left:0}
+.divine-ornament::after{right:0}
+.divine-ornament span{
+  position:absolute;
+  left:50%;
+  top:1px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#d0a24d;
+  transform:translateX(-50%);
+  box-shadow:0 0 14px rgba(208,162,77,.22);
+}
+
+.divine-copy>p{
+  max-width:760px;
+  margin:0;
+  color:#9e9891;
+  font-size:clamp(16px,1.1vw,19px);
+  line-height:1.62;
+  font-weight:300;
+}
+
+.prabhavali-card{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:215px 1fr;
+  gap:27px;
+  align-items:center;
+  max-width:700px;
+}
+
+.prabhavali-card img{
+  width:215px;
+  aspect-ratio:1.33/1;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border-radius:9px;
+  border:1px solid rgba(205,155,55,.86);
+  background:#11100d;
+}
+
+.prabhavali-copy h3{
+  margin:0 0 9px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  font-weight:400;
+  color:#e9dfcf;
+}
+.prabhavali-copy p{
+  margin:0;
+  color:#918b84;
+  font-size:14px;
+  line-height:1.42;
+}
+
+/* Small entrance motion only; it follows the current site's reveal language. */
+.divine-section .reveal-on-scroll{
+  transform:translateY(28px);
+}
+.divine-section .reveal-on-scroll.visible{
+  transform:none;
+}
+
+@media(max-width:1200px){
+  .divine-section{padding-left:55px;padding-right:55px}
+  .divine-grid{grid-template-columns:minmax(360px,.88fr) minmax(440px,1.12fr);gap:58px}
+  .divine-portrait{min-height:560px;height:67vh}
+  .prabhavali-card{grid-template-columns:185px 1fr}
+  .prabhavali-card img{width:185px}
+}
+
+@media(max-width:900px){
+  .divine-section{padding:120px 22px 78px}
+  .divine-kicker{margin-bottom:46px}
+  .divine-grid{grid-template-columns:1fr;gap:48px}
+  .divine-portrait{width:min(100%,620px);height:min(74vh,700px);min-height:520px;margin:0 auto}
+  .divine-copy{width:min(100%,680px);margin:0 auto;padding:0}
+  .divine-rank{margin:30px 0 24px}
+  .divine-ornament{margin-bottom:29px}
+}
+
+@media(max-width:600px){
+  .divine-section{padding-top:112px}
+  .divine-kicker{font-size:9px;letter-spacing:.20em;padding:8px 15px}
+  .divine-portrait{min-height:430px;height:58vh;border-radius:12px}
+  .divine-copy h2{font-size:clamp(46px,14vw,62px)}
+  .divine-copy>p{font-size:15px;line-height:1.7}
+  .prabhavali-card{grid-template-columns:120px 1fr;gap:17px;margin-top:34px}
+  .prabhavali-card img{width:120px;border-radius:7px}
+  .prabhavali-copy h3{font-size:21px}
+  .prabhavali-copy p{font-size:12px}
+}
