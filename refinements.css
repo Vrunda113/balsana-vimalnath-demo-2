@@ -17,8 +17,7 @@
   box-shadow:0 12px 35px rgba(0,0,0,.16);
 }
 
-/* Hero artwork position stays the same, but the unnecessary extra zoom from V6
-   is reduced so the 1536×1024 source is not enlarged more than needed. */
+/* Desktop artwork remains exactly as approved. */
 .image-layer{
   inset:0;
   background-position:center 34%;
@@ -38,7 +37,9 @@ body.hero-complete .inner-nav-mask{opacity:.44;}
 /* Arrow / golden beam effect intentionally disabled for now. */
 .living-lines{display:none!important;}
 
-/* Keep only the very subtle ambient breathing after the stone reveal. */
+/* Mobile copy is separate from the baked desktop artwork. */
+.mobile-hero-copy{display:none;}
+
 body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite;}
 
 @keyframes sacredBreath{
@@ -46,11 +47,10 @@ body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite
   50%{opacity:1;filter:blur(21px);}
 }
 
-/* Mobile/tablet: the supplied hero artwork is a desktop landscape composition.
-   On narrow screens we intentionally crop away the baked-in desktop copy and
-   keep Shri Vimalnath Bhagwan as the clean focal point. The image is sized by
-   height instead of zoomed with `cover`, so the murti remains proportionate and
-   the hero still fills the full viewport without affecting the stone layer. */
+/* Mobile/tablet: recreate the desktop composition responsively instead of trying
+   to fit the entire desktop screenshot into a portrait viewport. The background
+   keeps only the murti/rock artwork, while the same heading/tagline are rendered
+   as real responsive text below the figure. */
 @media(max-width:900px){
   .image-layer{
     inset:0;
@@ -58,32 +58,118 @@ body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite
     background-repeat:no-repeat;
     background-position:66% center;
     background-color:#0e0d0b;
-    transform:translateY(calc((.5 - var(--p))*.45%));
+    transform:none;
+    filter:saturate(.97) contrast(1.055) brightness(calc(.55 + var(--p)*.48));
+  }
+
+  /* Darken the bottom so the recreated text has the same cinematic contrast. */
+  .shade{
+    background:
+      linear-gradient(180deg,rgba(7,6,5,.08) 0%,rgba(7,6,5,.02) 38%,rgba(7,6,5,.30) 63%,rgba(5,4,3,.88) 100%),
+      radial-gradient(circle at 58% 37%,transparent 13%,rgba(9,8,7,.08) 46%,rgba(7,6,5,.33) 100%);
   }
 
   .sacred-glow{
-    width:72vw;
-    height:66vh;
+    width:76vw;
+    height:56vh;
     left:50%;
-    top:13%;
-    transform:translateX(-18%);
+    top:8%;
+    transform:translateX(-17%);
   }
+
+  .mobile-hero-copy{
+    display:block;
+    position:absolute;
+    z-index:6;
+    left:22px;
+    right:22px;
+    bottom:38px;
+    text-align:left;
+    color:#f1e8da;
+    opacity:calc(var(--p) * 1.22 - .12);
+    pointer-events:none;
+    text-shadow:0 5px 28px rgba(0,0,0,.65);
+  }
+
+  .mobile-hero-eyebrow{
+    margin:0 0 10px;
+    color:#c99a48;
+    font-size:8px;
+    font-weight:600;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+  }
+
+  .mobile-hero-copy h1{
+    margin:0;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(43px,13vw,66px);
+    font-weight:400;
+    line-height:.78;
+    letter-spacing:-.045em;
+  }
+
+  .mobile-hero-divider{
+    display:block;
+    width:104px;
+    height:1px;
+    margin:20px 0 15px;
+    background:linear-gradient(90deg,#b68d45 0 36%,transparent 36% 47%,#d4a654 47% 52%,transparent 52% 63%,#b68d45 63% 100%);
+    opacity:.75;
+  }
+
+  .mobile-hero-tagline{
+    margin:0;
+    max-width:330px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.1;
+    color:#cfc3b3;
+  }
+
+  .mobile-hero-copy small{
+    display:block;
+    margin-top:24px;
+    color:#a88955;
+    font-size:7px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+  }
+
+  /* Desktop baked-in scroll cue isn't useful on the narrow composition. */
+  .scroll-cue{display:none;}
 }
 
 @media(max-width:600px){
   .image-layer{
     background-size:auto 100%;
     background-position:66% center;
-    transform:none;
   }
 
-  .sacred-glow{
-    width:88vw;
-    height:62vh;
-    left:48%;
-    top:15%;
-    transform:translateX(-20%);
+  .mobile-hero-copy{
+    left:18px;
+    right:18px;
+    bottom:28px;
   }
+
+  .mobile-hero-copy h1{font-size:clamp(40px,12.5vw,58px);}
+  .mobile-hero-tagline{font-size:18px;}
+
+  .sacred-glow{
+    width:92vw;
+    height:52vh;
+    left:49%;
+    top:9%;
+    transform:translateX(-19%);
+  }
+}
+
+@media(max-height:740px) and (max-width:900px){
+  .mobile-hero-copy{bottom:20px;}
+  .mobile-hero-copy h1{font-size:42px;}
+  .mobile-hero-divider{margin:14px 0 11px;}
+  .mobile-hero-tagline{font-size:17px;}
+  .mobile-hero-copy small{margin-top:16px;}
 }
 
 @media(prefers-reduced-motion:reduce){
