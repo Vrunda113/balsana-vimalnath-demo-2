@@ -56,7 +56,7 @@ body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite
     inset:0;
     background-size:auto 100%;
     background-repeat:no-repeat;
-    background-position:60% center;
+    background-position:20% center;
     background-color:#0e0d0b;
     transform:none;
     filter:saturate(.97) contrast(1.055) brightness(calc(.55 + var(--p)*.48));
