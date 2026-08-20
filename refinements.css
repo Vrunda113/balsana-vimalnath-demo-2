@@ -46,11 +46,43 @@ body.hero-complete .sacred-glow{animation:sacredBreath 5.4s ease-in-out infinite
   50%{opacity:1;filter:blur(21px);}
 }
 
+/* Mobile/tablet: the supplied hero artwork is a desktop landscape composition.
+   On narrow screens we intentionally crop away the baked-in desktop copy and
+   keep Shri Vimalnath Bhagwan as the clean focal point. The image is sized by
+   height instead of zoomed with `cover`, so the murti remains proportionate and
+   the hero still fills the full viewport without affecting the stone layer. */
 @media(max-width:900px){
   .image-layer{
     inset:0;
-    background-position:center 42%;
-    transform:scale(calc(1.02 - var(--p)*.01)) translateY(calc((.5 - var(--p))*.7%));
+    background-size:auto 100%;
+    background-repeat:no-repeat;
+    background-position:66% center;
+    background-color:#0e0d0b;
+    transform:translateY(calc((.5 - var(--p))*.45%));
+  }
+
+  .sacred-glow{
+    width:72vw;
+    height:66vh;
+    left:50%;
+    top:13%;
+    transform:translateX(-18%);
+  }
+}
+
+@media(max-width:600px){
+  .image-layer{
+    background-size:auto 100%;
+    background-position:66% center;
+    transform:none;
+  }
+
+  .sacred-glow{
+    width:88vw;
+    height:62vh;
+    left:48%;
+    top:15%;
+    transform:translateX(-20%);
   }
 }
 
